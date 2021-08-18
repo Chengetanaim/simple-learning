@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Learning - Python Questions</title>
+</head>
+{% extends 'easyprogramming/base.html' %}
+<body>
+{% block content %}
+    <style type="text/css">
+
+        body {
+        padding-bottom: 20px;
+        }
+
+        .navbar {
+        margin-bottom: 20px;
+        }
+
+
+        .blog-header {
+          line-height: 1;
+          border-bottom: 1px solid #e5e5e5;
+        }
+
+        .blog-header-logo {
+          font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+          font-size: 2.25rem;
+        }
+
+        .blog-header-logo:hover {
+          text-decoration: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+        }
+
+        .display-4 {
+          font-size: 2.5rem;
+        }
+        @media (min-width: 768px) {
+          .display-4 {
+            font-size: 3rem;
+          }
+        }
+
+        .nav-scroller {
+          position: relative;
+          z-index: 2;
+          height: 2.75rem;
+          overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+          display: flex;
+          flex-wrap: nowrap;
+          padding-bottom: 1rem;
+          margin-top: -1px;
+          overflow-x: auto;
+          text-align: center;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-scroller .nav-link {
+          padding-top: .75rem;
+          padding-bottom: .75rem;
+          font-size: .875rem;
+        }
+
+        .card-img-right {
+          height: 100%;
+          border-radius: 0 3px 3px 0;
+        }
+
+        .flex-auto {
+          flex: 0 0 auto;
+        }
+
+        .h-250 { height: 250px; }
+        @media (min-width: 768px) {
+          .h-md-250 { height: 250px; }
+        }
+
+        /* Pagination */
+        .blog-pagination {
+          margin-bottom: 4rem;
+        }
+        .blog-pagination > .btn {
+          border-radius: 2rem;
+        }
+
+        /*
+         * Blog posts
+         */
+        .blog-post {
+          margin-bottom: 4rem;
+        }
+        .blog-post-title {
+          margin-bottom: .25rem;
+          font-size: 2.5rem;
+        }
+        .blog-post-meta {
+          margin-bottom: 1.25rem;
+          color: #727272;
+        }
+
+        /*
+         * Footer
+         */
+        .blog-footer {
+          padding: 2.5rem 0;
+          color: #727272;
+          text-align: center;
+          background-color: #f9f9f9;
+          border-top: .05rem solid #e5e5e5;
+        }
+        .blog-footer p:last-child {
+          margin-bottom: 0;
+        }
+
+
+    </style>
+    <br>
+    <main class="container">
+    <div class="row g-5">
+    <div class="col-md-8">
+     <div class="row g-5">
+         <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">
+            Questions:
+          </h3>
+          <article class="blog-post">
+                <a class="btn btn-sm btn-outline-secondary" href="{% url 'easyprogramming:new_question' %}">Add question</a>
+                <br>
+          <br>
+              <ul>
+                 {% for question in questions %}
+                     <h5 class="pb-4 mb-4 fst-italic border-bottom">
+                        <a href="{% url 'easyprogramming:question' question.id %}">{{ question }}</a> <br> <br>
+                     </h5>
+                 {% empty %}
+                    <li>No questions have been added yet.</li>
+                {% endfor %}
+              </ul>
+          </article>
+        </div>
+     </div>
+    </div>
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0">You've got something you want to ask.  Simple learning helps you put your thoughts where everyone can see, all you need to do is click the Add question button and start typing.</p>
+        </div>
+        <div class="p-4">
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a class="text-secondary" href="#">March 2021</a></li>
+            <li><a class="text-muted" href="#">February 2021</a></li>
+            <li><a class="text-muted" href="#">January 2021</a></li>
+            <li><a class="text-muted" href="#">December 2020</a></li>
+            <li><a class="text-muted" href="#">November 2020</a></li>
+            <li><a class="text-muted" href="#">October 2020</a></li>
+            <li><a class="text-muted" href="#">September 2020</a></li>
+            <li><a class="text-muted" href="#">August 2020</a></li>
+            <li><a class="text-muted" href="#">July 2020</a></li>
+            <li><a class="text-muted" href="#">June 2020</a></li>
+            <li><a class="text-muted" href="#">May 2020</a></li>
+            <li><a class="text-muted" href="#">April 2020</a></li>
+          </ol>
+        </div>
+        <div class="p-4">
+          <h4 class="fst-italic">Elsewhere</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/Chengetanaim">GitHub</a></li>
+            <li><a href="https://www.facebook.com/chengetani.mukanhairi">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+    </main>
+
+
+{% endblock content %}
+</body>
+</html>

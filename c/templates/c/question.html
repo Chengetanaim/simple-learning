@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Learning - C# Answers</title>
+</head>
+{% extends 'easyprogramming/base.html' %}
+<body>
+{% block content %}
+   <br>
+    <main class="container">
+    <div class="row g-5">
+    <div class="col-md-8">
+      <h5 class="pb-4 mb-4 fst-italic border-bottom">
+        Question: {{ question }}
+      </h5>
+      <article class="blog-post">
+          <h5><a class="p-2 link-secondary" aria-current="page" href="{% url 'c:new_answer' question.id %}">Add answer</a></h5>
+            <br>
+          <ul>
+              {% for answer in answers %}
+                <li>
+                    <p>{{ answer.date_added|date:'M d, Y H:i' }}</p>
+                    <p>{{ answer.text|linebreaks }}</p>
+                    <br>
+                </li>
+              {% empty %}
+                <li>There are no answers for this question yet.</li>
+              {% endfor %}
+          </ul>
+      </article>
+    </div>
+    </div>
+    </main>
+
+{% endblock content %}
+</body>
+</html>

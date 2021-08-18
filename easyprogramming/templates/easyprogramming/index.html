@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Learning - Home</title>
+</head>
+<body>
+{% extends 'easyprogramming/base.html' %}
+
+{% block content %}
+
+    <main class="container">
+      <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4 fst-italic">No place on earth better than home</h1>
+          <p class="lead my-3">Simple Learning is a platform where anyone can join and acquire knowledge about programming languages easily.  Browse through our files and look for typical questions and answers that will help you throughout your studies.</p>
+          <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+        </div>
+      </div>
+
+     <div class="row mb-2">
+        <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Python</strong>
+          <h3 class="mb-0">Featured question</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">What is a virtual environment in Django and how do you install it because I have seen some tutorials where people use command prompt to write their code whereas some are talking about if you have an IDE...</p>
+          <a href="{% url 'easyprogramming:questions' %}" class="stretched-link">Continue reading</a>
+        </div>
+
+        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Java</strong>
+          <h3 class="mb-0">Featured Question</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">I'm trying to make a project where I access all the names of Facebook users who live in Kwekwe and...</p>
+          <a href="{% url 'jprogramming:questions' %}" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block"></div>
+      </div>
+    </div>
+    </div>
+
+     <div class="row mb-2">
+        <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Python</strong>
+          <h3 class="mb-0">Featured answer</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and (by default) any libraries...</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+
+        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-danger">Html & Css</strong>
+          <h3 class="mb-0">Featured Question</h3>
+          <div class="mb-1 text-muted">Nov 11</div>
+          <p class="mb-auto">First install Git Bash and write the following commands <br> git add . <br> git commit -m 'first commit' <br> </p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block"></div>
+      </div>
+    </div>
+    </div>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021 - Coding With Che</p>
+    </main>
+
+{% endblock content %}
+
+</body>
+</html>

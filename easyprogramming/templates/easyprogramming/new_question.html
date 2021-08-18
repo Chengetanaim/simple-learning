@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Learning - Python New Question</title>
+</head>
+{% extends 'easyprogramming/base.html' %}
+<body>
+{% block content %}
+    <br>
+    <main class="container">
+        <p>What's on your mind?</p>
+
+        <form action="{% url 'easyprogramming:new_question' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button name="submit">Add question</button>
+        </form>
+
+
+
+    </main>
+{% endblock content %}
+</body>
+</html>

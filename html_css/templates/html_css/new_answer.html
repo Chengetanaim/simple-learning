@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Learning - Html & Css New Answer</title>
+</head>
+{% extends 'easyprogramming/base.html' %}
+<body>
+{% block content %}
+    <br>
+    <main class="container">
+        <p><a href="{% url 'html_css:question' question.id %}">{{ question }}</a></p>
+        <p>What knowledge you've got there?:</p>
+        <form action="{% url 'html_css:new_answer' question.id %}" method='post'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button name='submit'>Add answer</button>
+        </form>
+    </main>
+{% endblock content %}
+</body>
+</html>
